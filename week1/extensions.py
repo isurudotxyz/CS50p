@@ -1,18 +1,15 @@
-s = input("File name: ").lower()
-extension = s[-4:]
+file = (input("File name: ")).lower().strip().split(".")
 
-def switch(input):
-    if input == ".jpg" or input == "jpeg":
-       print("image/jpeg")
-    elif input == ".pdf":
-       print("application/pdf")
-    elif input == ".gif":
-       print("image/gid")
-    elif input == ".txt":
-       print("text/plain")
-    elif input == ".png":
-       print("image/png")
-    elif input == ".zip":
-       print("application/zip")
-       
-switch (extension)
+application = ["zip", "pdf"]
+image = ["png", "gif"]
+
+if file[-1] == "txt":
+    print("text/plain")
+elif file[-1] in application:
+    print(f"application/{file[-1]}")
+elif file[-1] == "jpg" or file[-1] == "jpeg":
+    print("image/jpeg")
+elif file[-1] in image:
+    print(f"image/{file[-1]}")
+else:
+    print("application/octet-stream")

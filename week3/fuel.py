@@ -1,17 +1,17 @@
 # inset the input in fraction x/y
-# if value error prompt again 
-# if value of y is 0 or greater than x ask to prompt again 
-# print the converted percentage 
+# if value error prompt again
+# if value of y is 0 or greater than x ask to prompt again
+# print the converted percentage
 while True:
     try:
         fraction = input("Fraction: ")
-        x, y  = (fraction).split("/")
+        x, y = (fraction).split("/")
         x = int(x)
         y = int(y)
-        
+
         if y != 0 and y >= x:
-          percentage = round(((x / y) * 100))
-          break
+            percentage = round(((x / y) * 100))
+            break
 
     except ValueError:
         pass
